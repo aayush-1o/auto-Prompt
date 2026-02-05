@@ -27,6 +27,12 @@ AutoPrompt MVP Benchmark is an advanced prompt engineering system that automatic
 - **⚡ Production-Ready** with retry logic, rate limiting, and error handling
 - **🔄 CI/CD Pipeline** with automated testing on every commit
 
+### 🎬 Interactive Demo
+
+![AutoPrompt Demo](demo_screenshot.png)
+
+*Live comparison showing AutoPrompt achieving **20.5% higher confidence** than baseline approach*
+
 ---
 
 ## ✨ Features
