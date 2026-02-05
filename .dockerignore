@@ -1,0 +1,7 @@
+# Docker
+*.log
+__pycache__/
+*.pyc
+.env
+results/
+logs/
