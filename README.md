@@ -48,6 +48,7 @@ AutoPrompt MVP Benchmark is an advanced prompt engineering system that automatic
 
 - Python 3.9 or higher
 - Google Gemini API key ([Get one here](https://aistudio.google.com/app/apikey))
+- (Optional) Docker for containerized deployment
 
 ### Installation
 
@@ -77,6 +78,47 @@ python main.py
 
 # Generate visualizations after benchmark completes
 python visualize_results.py
+```
+
+### 🎨 Interactive Demo (Streamlit)
+
+Launch the interactive web demo:
+
+```bash
+streamlit run app.py
+```
+
+Then open your browser to `http://localhost:8501` to try the system interactively!
+
+### 🐳 Docker Deployment
+
+**Option 1: Docker Compose (Recommended)**
+```bash
+# Run Streamlit app
+docker-compose up
+
+# Run benchmark (use benchmark profile)
+docker-compose --profile benchmark up autoprompt-benchmark
+```
+
+**Option 2: Docker (Manual)**
+```bash
+# Build image
+docker build -t autoprompt .
+
+# Run Streamlit app
+docker run -p 8501:8501 -v $(pwd)/.env:/app/.env autoprompt
+
+# Run benchmark
+docker run -v $(pwd)/results:/app/results -v $(pwd)/.env:/app/.env autoprompt python main.py
+```
+
+### 📊 Jupyter Analysis
+
+Open the analysis notebook:
+
+```bash
+jupyter notebook notebooks/analysis.ipynb
 ```
 
 **Note:** The benchmark processes 20 reviews with built-in rate limiting for free tier API usage.
